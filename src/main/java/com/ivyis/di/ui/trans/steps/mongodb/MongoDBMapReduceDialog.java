@@ -7,7 +7,6 @@ import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.events.ModifyEvent;
@@ -21,6 +20,7 @@ import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
@@ -82,9 +82,9 @@ public class MongoDBMapReduceDialog extends BaseStepDialog implements StepDialog
   private TextVar wAuthDb;
   private TextVar wAuthMechanism;
 
-  private CCombo wDbName;
+  private Combo wDbName;
   private Button wgetDbsBut;
-  private CCombo wCollection;
+  private Combo wCollection;
   private Button wgetCollectionsBut;
   private StyledTextComp wMapFuncScript;
   private StyledTextComp wReduceFuncScript;
@@ -287,7 +287,7 @@ public class MongoDBMapReduceDialog extends BaseStepDialog implements StepDialog
       }
     });
 
-    wDbName = new CCombo(wMongoConfigComp, SWT.BORDER);
+    wDbName = new Combo(wMongoConfigComp, SWT.BORDER);
     props.setLook(wDbName);
     wDbName.addModifyListener(lsMod);
     final FormData fdDbName = new FormData();
@@ -328,7 +328,7 @@ public class MongoDBMapReduceDialog extends BaseStepDialog implements StepDialog
       }
     });
 
-    wCollection = new CCombo(wMongoConfigComp, SWT.BORDER);
+    wCollection = new Combo(wMongoConfigComp, SWT.BORDER);
     props.setLook(wCollection);
     wCollection.addModifyListener(lsMod);
     final FormData fdCollection = new FormData();
